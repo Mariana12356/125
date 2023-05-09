@@ -1,0 +1,32 @@
+.heading{
+    font-size: 24px;
+    width: 100%;
+    margin: 0;
+    box-shadow: 5px 5px 5px pink;
+    background-color: rgb(255, 160, 176);
+    color: white;
+}
+
+body{
+    background-color: rgb(255, 223, 228);
+}
+
+.note{
+    font-size: 18px;
+    color: palevioletred;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: palevioletred;
+}
+
+canvas{
+    border: 12px solid palevioletred ;
+    border-radius: 12px;
+    background-color:rgb(176, 71, 88) ;
+
+    
+}
