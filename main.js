@@ -12,14 +12,15 @@ function setup(){
 }
 
 function preload(){
-
+    base = loadImage('https://wepink.vtexassets.com/arquivos/ids/156682/base1000.png?v=638186538743200000')
 }
 
 function draw(){
     background("#ffa9b8")
-    fill("#ffdfe4")
-    stroke("#b04758")
-    square(noseX, noseY, diferenca)
+    image(base,noseX,noseY,diferenca,diferenca)
+    // fill("#ffdfe4")
+    // stroke("#b04758")
+    // //square(noseX, noseY, diferenca)
 }
 
 function modelLoaded(){
@@ -29,10 +30,15 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length > 0){
         console.log(results)
-        noseX = results[0].pose.nose.X
-        noseY = results[0].pose.nose.Y
-        leftWristX = results[0].pose.leftWrist.X
-        rigthWristX = results[0].pose.rigthWrist.X
-        diferenca = floor(rigthWristX - leftWristX)
+        noseX = results[0].pose.nose.x
+        noseY = results[0].pose.nose.y
+        noseX = floor(noseX)
+        noseY = floor(noseY)
+        
+        leftWristX = results[0].pose.leftWrist.x
+        rigthWristX = results[0].pose.rightWrist.x
+        
+        diferenca = floor(leftWristX-rigthWristX)
+        
     }
 }
